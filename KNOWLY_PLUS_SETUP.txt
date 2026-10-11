@@ -1,0 +1,21 @@
+KNOWLY PLUS UPGRADE
+
+Files in this upgrade:
+- app.py: updated main Streamlit app, with the existing app features plus all six feature areas.
+- knowly_plus.py: local persistence, interactive graph generation, evidence-first comparison, and source-backed study-card helpers.
+
+INSTALL
+1. Stop Streamlit in the project terminal with Ctrl+C.
+2. Back up your current app.py.
+3. Copy the supplied app.py into C:\Users\gamer\Documents\faq-knowledge-assistant\app.py, replacing the old one.
+4. Copy knowly_plus.py into the SAME folder as app.py.
+5. Make sure reportlab and faster-whisper remain installed in the active .venv. No extra Python package is required for knowly_plus.py.
+6. Start the app:
+   python -m streamlit run app.py
+
+IMPORTANT
+- Keep your existing document_pipeline.py, retrieval.py, answer_generator.py, and summarizer.py in place. This upgrade imports them and preserves those working modules.
+- Persistent data is stored in knowly_workspace.sqlite3 next to app.py. It contains indexed document text, chat history, and bookmarks; do not share it publicly.
+- The graph's interactive network library loads from a CDN, so an internet connection is needed for the graph visualization. The document processing and Ollama answer generation remain local as before.
+- Comparison reports exact sentence matches separately from unique sentences. Different wording is not automatically treated as a contradiction.
+- Study mode cards use extracted document text and show their source. This is evidence-grounded practice, not a guarantee that every extracted sentence is a perfect exam question.
