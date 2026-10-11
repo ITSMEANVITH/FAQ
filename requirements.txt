@@ -1,0 +1,8 @@
+streamlit
+PyMuPDF
+python-docx
+numpy
+scikit-learn
+ollama
+reportlab
+faster-whisper
